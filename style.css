@@ -1,0 +1,469 @@
+/* =========================================
+   VAERIC — INITIAL WEBSITE STYLE
+   ========================================= */
+
+:root {
+    --background: #0a0a0a;
+    --background-light: #111111;
+    --text: #f2f2f2;
+    --text-muted: #999999;
+    --accent: #b00020;
+    --border: #2a2a2a;
+}
+
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    max-width: 1400px;
+    margin: auto;
+
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--text);
+    text-decoration: none;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 120px 40px 80px;
+}
+
+
+/* Hero placeholder */
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #222222 0%,
+            #111111 35%,
+            #050505 75%
+        );
+
+    color: #555555;
+
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+}
+
+
+/* Dark overlay */
+
+.hero-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+}
+
+
+/* Hero text */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--accent);
+
+    font-size: 0.75rem;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(4rem, 12vw, 10rem);
+
+    line-height: 0.9;
+
+    letter-spacing: 12px;
+
+    margin-bottom: 25px;
+}
+
+.tagline {
+    color: var(--text-muted);
+
+    letter-spacing: 5px;
+
+    font-size: 0.8rem;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    border: 1px solid var(--text);
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.button:hover {
+    background: var(--text);
+    color: var(--background);
+}
+
+.button-outline {
+    border-color: var(--border);
+    color: var(--text-muted);
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+   ========================================= */
+
+.section {
+    min-height: 80vh;
+
+    padding: 120px 8%;
+
+    display: flex;
+    align-items: center;
+    gap: 80px;
+
+    border-top: 1px solid var(--border);
+}
+
+.section-image {
+    width: 50%;
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--background-light);
+
+    border: 1px solid var(--border);
+
+    color: #555555;
+
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+}
+
+.section-content {
+    flex: 1;
+}
+
+.section-content h2 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+
+    line-height: 1;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+}
+
+.section-content p {
+    color: var(--text-muted);
+
+    max-width: 600px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   CENTERED SECTIONS
+   ========================================= */
+
+.centered {
+    width: 100%;
+    text-align: center;
+}
+
+.centered p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================
+   MUSIC
+   ========================================= */
+
+.music-section {
+    background: var(--background-light);
+}
+
+.music-placeholder {
+    max-width: 700px;
+    height: 250px;
+
+    margin: 50px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    color: #555555;
+
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+}
+
+
+/* =========================================
+   VIDEOS
+   ========================================= */
+
+.video-placeholder {
+    max-width: 900px;
+    height: 500px;
+
+    margin: 50px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--background-light);
+
+    border: 1px solid var(--border);
+
+    color: #555555;
+
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+}
+
+
+/* =========================================
+   SOCIALS
+   ========================================= */
+
+.contact-section {
+    min-height: 60vh;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+
+    gap: 40px;
+
+    margin-top: 40px;
+}
+
+.social-links a {
+    color: var(--text-muted);
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 3px;
+
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+
+    color: #555555;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        padding: 18px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    h1 {
+        letter-spacing: 6px;
+    }
+
+    .section {
+        flex-direction: column;
+
+        padding: 90px 25px;
+
+        gap: 50px;
+    }
+
+    .section-image {
+        width: 100%;
+        min-height: 350px;
+    }
+
+    .buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .button {
+        width: 200px;
+
+        text-align: center;
+    }
+
+    .video-placeholder {
+        height: 300px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
