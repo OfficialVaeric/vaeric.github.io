@@ -496,6 +496,10 @@ h1 {
 .release-art span {
     position: relative;
     z-index: 2;
+
+    width: 100%;
+
+    text-align: center;
 }
 
 /* Release Information */
