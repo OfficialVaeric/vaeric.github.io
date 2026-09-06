@@ -402,26 +402,154 @@ h1 {
 
 .music-section {
     background: var(--background-light);
+
+    min-height: 90vh;
+
+    justify-content: center;
 }
 
-.music-placeholder {
-    max-width: 700px;
-    height: 250px;
+.music-container {
+    width: 100%;
+    max-width: 1100px;
+}
 
-    margin: 50px auto 0;
+.music-heading {
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.music-heading h2 {
+    margin-bottom: 20px;
+}
+
+
+/* Release card */
+
+.release-card {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+/* Cover artwork */
+
+.release-art {
+    aspect-ratio: 1 / 1;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    position: relative;
+
+    overflow: hidden;
+
     border: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #242424 0%,
+            #111111 45%,
+            #070707 100%
+        );
 
     color: #555555;
 
+    text-align: center;
+
+    font-size: 0.7rem;
+
     letter-spacing: 3px;
-    font-size: 0.75rem;
 }
 
+.release-art::before {
+    content: "";
+
+    position: absolute;
+    inset: 15%;
+
+    border: 1px solid #252525;
+
+    transform: rotate(45deg);
+
+    opacity: 0.5;
+}
+
+.release-art span {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* Release information */
+
+.release-info {
+    padding: 20px;
+}
+
+.release-label {
+    color: var(--accent) !important;
+
+    font-size: 0.7rem;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.release-info h3 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+
+    letter-spacing: 8px;
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+.release-status {
+    margin-bottom: 35px !important;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .release-card {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .release-art {
+        max-width: 500px;
+
+        width: 100%;
+
+        margin: auto;
+    }
+
+    .release-info {
+        text-align: center;
+    }
+
+    .release-info p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
 
 /* =========================================
    VIDEOS
