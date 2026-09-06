@@ -401,11 +401,11 @@ h1 {
    ========================================= */
 
 .music-section {
-    background: var(--background-light);
-
     min-height: 90vh;
-
-    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-context: center;
+    background: var(--background-light);
 }
 
 .music-container {
@@ -415,7 +415,6 @@ h1 {
 
 .music-heading {
     text-align: center;
-
     margin-bottom: 70px;
 }
 
@@ -423,31 +422,30 @@ h1 {
     margin-bottom: 20px;
 }
 
-
-/* Release card */
+/* Release Card */
 
 .release-card {
-    display: grid;
+    width: 100%;
 
+    display: grid;
     grid-template-columns: 1fr 1fr;
 
-    gap: 60px;
+    gap: 70px;
 
     align-items: center;
 }
 
-
-/* Cover artwork */
+/* Cover Art */
 
 .release-art {
+    width: 100%;
     aspect-ratio: 1 / 1;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-context: center;
 
     position: relative;
-
     overflow: hidden;
 
     border: 1px solid var(--border);
@@ -460,12 +458,11 @@ h1 {
             #070707 100%
         );
 
-    color: #555555;
+    color: #555;
 
     text-align: center;
 
     font-size: 0.7rem;
-
     letter-spacing: 3px;
 }
 
@@ -475,21 +472,33 @@ h1 {
     position: absolute;
     inset: 15%;
 
-    border: 1px solid #252525;
+    border: 1px solid #292929;
 
     transform: rotate(45deg);
+
+    opacity: 0.6;
+}
+
+.release-art::after {
+    content: "";
+
+    position: absolute;
+    width: 55%;
+    height: 55%;
+
+    border: 1px solid #202020;
+
+    transform: rotate(-20deg);
 
     opacity: 0.5;
 }
 
 .release-art span {
     position: relative;
-
     z-index: 2;
 }
 
-
-/* Release information */
+/* Release Information */
 
 .release-info {
     padding: 20px;
@@ -499,20 +508,21 @@ h1 {
     color: var(--accent) !important;
 
     font-size: 0.7rem;
-
     font-weight: bold;
 
     letter-spacing: 4px;
 
     text-transform: uppercase;
+
+    margin-bottom: 20px;
 }
 
 .release-info h3 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
-
-    letter-spacing: 8px;
+    font-size: clamp(3rem, 6vw, 5rem);
 
     line-height: 1;
+
+    letter-spacing: 8px;
 
     margin-bottom: 25px;
 }
@@ -521,32 +531,35 @@ h1 {
     margin-bottom: 35px !important;
 }
 
-
 /* Mobile */
 
 @media (max-width: 800px) {
 
+    .music-section {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .music-heading {
+        margin-bottom: 50px;
+    }
+
     .release-card {
         grid-template-columns: 1fr;
-
         gap: 40px;
     }
 
     .release-art {
         max-width: 500px;
-
-        width: 100%;
-
-        margin: auto;
+        margin: 0 auto;
     }
 
     .release-info {
         text-align: center;
     }
 
-    .release-info p {
-        margin-left: auto;
-        margin-right: auto;
+    .release-buttons {
+        justify-content: center;
     }
 
 }
