@@ -589,7 +589,6 @@ h1 {
 
 .videos-heading {
     text-align: center;
-
     margin-bottom: 60px;
 }
 
@@ -598,14 +597,17 @@ h1 {
 }
 
 
-/* Video */
+/* Video Frame */
 
 .video-card {
     width: 100%;
+    display: block;
 }
 
-.video-placeholder {
+.videos-section .video-placeholder {
     width: 100%;
+    height: auto;
+    min-height: 0;
 
     aspect-ratio: 16 / 9;
 
@@ -617,6 +619,8 @@ h1 {
 
     position: relative;
     overflow: hidden;
+
+    box-sizing: border-box;
 
     border: 1px solid var(--border);
 
@@ -630,9 +634,9 @@ h1 {
 }
 
 
-/* Subtle geometric background */
+/* Geometric Background */
 
-.video-placeholder::before {
+.videos-section .video-placeholder::before {
     content: "";
 
     position: absolute;
@@ -647,10 +651,11 @@ h1 {
     opacity: 0.6;
 }
 
-.video-placeholder::after {
+.videos-section .video-placeholder::after {
     content: "";
 
     position: absolute;
+
     inset: 10%;
 
     border: 1px solid #1d1d1d;
@@ -659,9 +664,9 @@ h1 {
 }
 
 
-/* Play button */
+/* Play Button */
 
-.play-icon {
+.videos-section .play-icon {
     width: 70px;
     height: 70px;
 
@@ -671,6 +676,8 @@ h1 {
 
     position: relative;
     z-index: 2;
+
+    box-sizing: border-box;
 
     border: 1px solid #555;
 
@@ -687,7 +694,10 @@ h1 {
         transform 0.3s ease;
 }
 
-.video-placeholder p {
+
+/* Coming Soon Text */
+
+.videos-section .video-placeholder p {
     position: relative;
     z-index: 2;
 
@@ -703,7 +713,7 @@ h1 {
 
 /* Hover */
 
-.video-placeholder:hover .play-icon {
+.videos-section .video-placeholder:hover .play-icon {
     border-color: var(--accent);
 
     transform: scale(1.08);
@@ -717,6 +727,10 @@ h1 {
     .videos-section {
         padding-top: 100px;
         padding-bottom: 100px;
+    }
+
+    .videos-heading {
+        margin-bottom: 50px;
     }
 
 }
