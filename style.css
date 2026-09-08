@@ -846,7 +846,7 @@ footer {
     .social-links {
         flex-direction: column;
         gap: 20px;
-
+    }
     .hero-glow {
         width: 400px;
         height: 400px;
