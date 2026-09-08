@@ -404,7 +404,7 @@ h1 {
     min-height: 90vh;
     display: flex;
     align-items: center;
-    justify-context: center;
+    justify-content: center;
     background: var(--background-light);
 }
 
@@ -443,7 +443,7 @@ h1 {
 
     display: flex;
     align-items: center;
-    justify-context: center;
+    justify-content: center;
 
     position: relative;
     overflow: hidden;
@@ -955,6 +955,7 @@ footer {
 .video-frame {
     width: 100%;
     aspect-ratio: 16 / 9;
+    min-height: 400px;
 
     position: relative;
 
