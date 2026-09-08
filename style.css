@@ -949,13 +949,15 @@ footer {
 .video-card {
     width: 100%;
     max-width: 1100px;
+
     margin: 0 auto;
+
+    display: block;
 }
 
 .video-frame {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    min-height: 400px;
+    height: 600px;
 
     position: relative;
 
